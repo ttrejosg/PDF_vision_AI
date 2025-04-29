@@ -1,39 +1,41 @@
 # PDFVisionAI
 
-This template should help get you started developing with Vue 3 in Vite.
+This project is a Vue.js application designed for the recognition and extraction of information from PDF documents. It allows users to upload PDF files, classify them, and extract relevant information using various AI models.
 
-## Recommended IDE Setup
+## Features
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+- **PDF Uploading**: Users can upload PDF files with validation for file types.
+- **PDF Classification**: The application uses AI models to classify the uploaded PDFs into different categories.
+- **Information Extraction**: The application can extract specific information from the uploaded PDFs and display the results.
+- **User-Friendly Interface**: The application provides a clean and intuitive interface for users to interact with.
 
-## Type Support for `.vue` Imports in TS
+## Installation
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
+1. Clone the repository:
+   ```
+   git clone <repository-url>
+   ```
+2. Navigate to the project directory:
+   ```
+   cd pdfvisionai
+   ```
+3. Install the dependencies:
+   ```
+    pnpm install
+   ```
 
-## Customize configuration
+## Usage
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+1. Start the development server:
+   ```
+    pnpm run dev
+   ```
+2. Open your browser and navigate to `http://localhost:3000` to access the application.
 
-## Project Setup
+## Contributing
 
-```sh
-pnpm install
-```
+Contributions are welcome! Please open an issue or submit a pull request for any enhancements or bug fixes.
 
-### Compile and Hot-Reload for Development
+## License
 
-```sh
-pnpm dev
-```
-
-### Type-Check, Compile and Minify for Production
-
-```sh
-pnpm build
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-pnpm lint
-```
+This project is licensed under the MIT License. See the LICENSE file for more details.

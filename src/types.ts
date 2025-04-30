@@ -5,4 +5,4 @@ export interface Model {
   extractor: boolean
 }
 export type TaskType = 'classification' | 'extraction'
-export type Result = Record<string, unknown>
+export type Result = Record<string, unknown> | string

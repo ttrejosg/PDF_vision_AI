@@ -6,8 +6,7 @@ import SelectModel from '../components/SelectModel.vue'
 import PdfUploader from '../components/PdfUploader.vue'
 import TaskSelector from '../components/TaskSelector.vue'
 import LoadingSpinner from '../components/LoadingSpinner.vue'
-import ResultTable from '../components/ResultTable.vue'
-import ResultJson from '../components/ResultJson.vue'
+import ResultViewer from '../components/ResultViewer.vue'
 import { useRouter } from 'vue-router'
 import { useAppStore } from '../store/app'
 
@@ -49,7 +48,6 @@ async function submit() {
 }
 
 const result = computed(() => store.result)
-const isTable = computed(() => store.taskType === 'classification')
 
 function reset() {
   store.setFile(null)
@@ -92,18 +90,13 @@ function reset() {
       </div>
     </section>
     <LoadingSpinner v-if="loading" />
-    <section class="start" v-if="result && !loading">
+    <section class="start" :style="{ justifyContent: 'start' }" v-if="result && !loading">
       <h1>Results</h1>
-      <p>Here are the results of your analysis:</p>
       <p>
         <strong>Task Type:</strong>
         {{ store.taskType === 'classification' ? 'Classification' : 'Extraction' }}
       </p>
-      <!-- <ResultTable v-if="isTable" :data="Array.isArray(result) ? result : [result]" />
-      <ResultJson v-else :json="result" /> -->
-      <p>
-        {{ result }}
-      </p>
+      <ResultViewer :data="result" />
       <p>Click the button below to analyze another PDF file.</p>
       <button @click="reset" class="another-button">Analyze Another PDF</button>
     </section>
@@ -125,13 +118,15 @@ main {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 2rem;
+  height: 100%;
+  box-sizing: unset;
+  padding: 0 1rem;
   h1 {
     font-size: 3rem;
-    margin-bottom: 1rem;
   }
   p {
     font-size: 1.125rem;
+    margin-bottom: 1rem;
   }
 }
 
@@ -167,7 +162,7 @@ main {
 }
 
 .another-button {
-  background-color: #28a745;
+  background-color: #007bff;
   color: white;
   border: none;
   border-radius: 20px;
@@ -175,6 +170,5 @@ main {
   font-size: 1.125rem;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  margin-top: 0.5rem;
 }
 </style>

@@ -76,7 +76,8 @@ function toggleDropdown() {
   position: relative;
   display: inline-block;
   text-align: left;
-  padding: 0.8rem;
+  padding-left: 0.8rem;
+  padding-top: 0.8rem;
   width: 100%;
 }
 

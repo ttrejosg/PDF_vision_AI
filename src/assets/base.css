@@ -21,12 +21,12 @@ html {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #ffffff;
+  background: #007bff;
   border-radius: 10px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #ffffff;
+  background: #f1f1f1;
 }
 
 body {

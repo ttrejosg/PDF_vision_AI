@@ -23,8 +23,12 @@ export async function submitTask(
 ): Promise<Result> {
   const form = new FormData()
   form.append('file', file)
-  const res = await axios.post<Result>(`${API_BASE}/models/${modelName}/${taskType}/`, form, {
-    headers: { 'Content-Type': 'multipart/form-data' },
-  })
-  return res.data
+  const res = await axios.post<{ result: Result }>(
+    `${API_BASE}/models/${modelName}/${taskType}/`,
+    form,
+    {
+      headers: { 'Content-Type': 'multipart/form-data' },
+    },
+  )
+  return res.data.result
 }
